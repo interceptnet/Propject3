@@ -1,0 +1,203 @@
+<!-- Josh Carlson, Max Breyer -->
+<!-- Web Tech team 5 -->
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Portfolio</title>
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+
+
+
+	<body id="top">
+
+
+		<!-- Main -->
+
+				<section id="banner">
+					<div class="inner">
+						<h2>Your Target Asset Allocation</h2>
+						<p>Scroll down to view your personally-tailored financial suggestions.</p>
+
+						<ul class="actions">
+							<li><a href="index.html" class="button big special">Change Account</a></li>
+							<li><br></li>
+							<li><a href="dataInput.html#formAnchor" class="button big special">Update Data</a></li>
+						</ul>
+					</div>
+				</section>
+
+
+						<!-- One -->
+						<section id="one" class="wrapper style1">
+
+							<div class="container">
+
+                                <div class="center">
+                                    <canvas id="piechart1" width="350" height="350">
+                                        Your browser does not support the HTML5 canvas tag!
+                                    </canvas>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <canvas id="piechart2" width="350" height="350">
+                                        Your browser does not support the HTML5 canvas tag!
+                                    </canvas>
+                                
+                                    <script>
+                                        /*adjust the values in data to set the pie wedge sizes
+                                          adjust the labels to rename the wedges*/
+                                        var data = [120, 100, 140];
+                                        var labels = ["120", "100", "140"];
+                                        var colors = ["#FFDAB9", "#E6E6FA", "#E0FFFF"];
+
+                                        function drawSegment(canvas, context, i)
+                                        {
+                                            context.save();
+                                            var centerX = Math.floor(canvas.width / 2);
+                                            var centerY = Math.floor(canvas.height / 2);
+                                            radius = Math.floor(canvas.width / 2);
+
+                                            var startingAngle = degreesToRadians(sumTo(data, i));
+                                            var arcSize = degreesToRadians(data[i]);
+                                            var endingAngle = startingAngle + arcSize;
+
+                                            context.beginPath();
+                                            context.moveTo(centerX, centerY);
+                                            context.arc(centerX, centerY, radius,
+                                                        startingAngle, endingAngle, false);
+                                            context.closePath();
+
+                                            context.fillStyle = colors[i];
+                                            context.fill();
+
+                                            context.restore();
+
+                                            drawSegmentLabel(canvas, context, i);
+                                        }
+                                        function degreesToRadians(degrees)
+                                        {
+                                            return (degrees * Math.PI) / 180;
+                                        }
+                                        function sumTo(a, i)
+                                        {
+                                            var sum = 0;
+                                            for (var j = 0; j < i; j++) {
+                                                sum += a[j];
+                                            }
+                                            return sum;
+                                        }
+                                        function drawSegmentLabel(canvas, context, i)
+                                        {
+                                            context.save();
+                                            var x = Math.floor(canvas.width / 2);
+                                            var y = Math.floor(canvas.height / 2);
+                                            var angle = degreesToRadians(sumTo(data, i));
+
+                                            context.translate(x, y);
+                                            context.rotate(angle);
+                                            var dx = Math.floor(canvas.width * 0.5) - 10;
+                                            var dy = Math.floor(canvas.height * 0.05);
+
+                                            context.textAlign = "right";
+                                            var fontSize = Math.floor(canvas.height / 25);
+                                            context.font = fontSize + "pt Helvetica";
+
+                                            context.fillText(labels[i], dx, dy);
+
+                                            context.restore();
+                                        }
+                                        canvas = document.getElementById("piechart1");
+                                        var context = canvas.getContext("2d");
+                                        for (var i = 0; i < data.length; i++)
+                                        {
+                                            drawSegment(canvas, context, i);
+                                        }
+                                        canvas = document.getElementById("piechart2");
+                                        var context = canvas.getContext("2d");
+                                        for (var i = 0; i < data.length; i++) {
+                                            drawSegment(canvas, context, i);
+                                        }
+                                    </script>
+
+                                </div>
+
+								<div class="row">
+
+									<div class="3u">
+										<section class="special box">
+
+											<h3>Portfolio Composition</h3>
+											<hr>
+											<p>Large Cap Equity</p>
+											<p>Small Cap Equity</p>
+											<p>International Equity</p>
+											<p>Fixed Income</p>
+											<p>Cash Investments</p>
+											<p>Other</p>
+											<hr>
+											<p>TOTAL</p>
+										</section>
+									</div>
+									<div class="3u">
+										<section class="special box">
+
+											<h3>	&#8291; &#8291; &#8291;  &#8291;  Current &#8291; &#8291; &#8291; &#8291; &#8291; &#8291; &#8291; &#8291; &#8291; &#8291; &#8291; &#8291;  </h3>
+											<hr>
+											<p>$00 &emsp; &emsp; &emsp; &emsp; &emsp; 	00</p>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+											<hr>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+										</section>
+									</div>
+									<div class="3u">
+										<section class="special box">
+
+											<h3>	&#8291; &#8291; &#8291;  &#8291; &#8291; Target  &#8291; &#8291; &#8291; &#8291; &#8291; &#8291; &#8291; &#8291; &#8291; &#8291; &#8291;  </h3>
+											<hr>
+											<p>$00 &emsp; &emsp; &emsp; &emsp; &emsp; 	00</p>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+											<hr>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+										</section>
+									</div>
+									<div class="3u">
+										<section class="special box">
+
+											<h3>	&#8291; &#8291;  Difference  &#8291; &#8291; &#8291; &#8291; &#8291; &#8291; &#8291; &#8291; &#8291; &#8291;  </h3>
+											<hr>
+											<p>$00 &emsp; &emsp; &emsp; &emsp; &emsp; 	00</p>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+											<hr>
+											<p>00 &emsp; &emsp; &emsp; &emsp; &emsp;	00%</p>
+										</section>
+									</div>
+
+								</div>
+							</div>
+						</section>
+                        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+
+	</body>
+</html>

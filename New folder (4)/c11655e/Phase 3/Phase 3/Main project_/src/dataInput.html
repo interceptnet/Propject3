@@ -1,0 +1,95 @@
+<!-- Josh Carlson -->
+<!-- Web Tech team 5 -->
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Financial Control</title>
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/addTextbox.js"></script>
+		<script type="text/javascript" src="dataload.js"></script>
+		
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+
+
+
+	<body id="top">
+	
+	<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h2>Enter Your Data</h2>
+					<ul class="actions">
+							<li><a href="index.html" class="button big special">Change Account</a></li>
+					</ul>
+				</div>
+			</section>
+
+		<br>
+		
+		
+		<a name="formAnchor"></a>
+		<section id="main" class="wrapper style1">
+			
+			
+		
+		
+			<header class="major">
+				<h3>Manually Enter Your Data:</h3>
+				<h4>To input multiple items for one category, separate Ticker and Count by commas respectively.</h4>
+				<form method="post" action="dataload.php" name="DataForm">
+					<table>
+						<tr>
+							<td></td>
+							<td colspan="3"><input type="text" name="username" id="username" readonly>
+								<script>document.getElementById("username").value = getURLParameter("username");</script>
+							</td>
+						<tr>
+							<td class="override">Stocks:</td>
+							<td colspan="3"><input type="text" name="stockTicker" id="stockTicker" placeholder="Ticker" ></td>			
+							<td colspan="3"><input type="text" name="stockCount" id="stockCount" placeholder="Shares Owned" ></td>
+						</tr>
+						<tr>
+							<td class="override">Bonds:</td>
+							<td colspan="3"><input type="text" name="bondName" id="bondName" placeholder="Name of Bond" ></td>			
+							<td colspan="3"><input type="text" name="bondPrice" id="bondPrice" placeholder="Purchase Price" ></td>
+							<td colspan="3"><input type="text" name="bondYield" id="bondYield" placeholder="Yield %"></td>
+						</tr>
+						<tr>
+							<td class="override">Cash Investments / Other:</td>
+							<td colspan="3"><input type="text" name="otherMoney" id="otherMoney" placeholder="$00.00" ></td>				
+						</tr>
+						
+						<tr>
+							<td class="override"> Investement Strategy:</td>
+							<td>
+							<select name="strategies">
+							  <option value="Short Term">Short Term</option>
+							  <option value="Conservative">Conservative</option>
+							  <option value="Moderate Conservative">Moderate Conservative</option>
+							  <option value="Moderate">Moderate</option>
+							  <option value="Moderate Aggressive">Moderate Aggressive</option>
+							  <option value="Aggressive">Aggressive</option>
+							</select>
+							</td>
+						</tr>
+						<tr> 
+							<td> </td>
+							<td> <input type="submit" class="button big special" value="Enter"></td> 
+						</tr>
+					</table>
+				</form>	
+					
+					
+					
+					<br>
+					
+			</header>
+		</section>

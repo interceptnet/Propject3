@@ -1,0 +1,100 @@
+<!-- Josh Carlson, Max Breyer -->
+<!-- Web Tech team 5 -->
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Financial Control</title>
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+
+
+
+	<body id="top">
+
+		
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h2>Control Your Finances</h2>
+					<p>Import a pre-existing .tab file, or manually enter your data</a></p>
+					<ul class="actions">
+						<li><a href="#fileInputAnchor" class="button big special">Import Data</a></li>
+						<li><br></li>
+						<li><a href="#formAnchor" class="button big special">Enter Manually</a></li>
+					</ul>
+				</div>
+			</section>
+
+		<br>
+
+		<!-- Form to take file input -->
+		<a name="fileInputAnchor"></a>
+		<section id="fileInput" class="wrapper style1">
+			<header class="major">
+				<h3>Import Data</h3>
+				<form action="FileProcessTest.php" method="POST" enctype="multipart/form-data">
+					<table>
+						<tr>
+							<td class="alignment">Select file:</td>
+							<td colspan="3"><input type="file" name="datafile" id="datafile"> </td>
+						</tr>
+					</table>
+					<br>
+					<a href="left-sidebar.html" class="button big special">Enter</a>
+				</form>
+			</header>
+		</section>
+
+		<a name="formAnchor"></a>
+		<section id="main" class="wrapper style1">
+			<header class="major">
+				<h3>Manually Enter  Your Data:</h3>
+				<form name="myForm">
+					<table>
+						<tr>
+							<td class="override">Large Cap Equity:</td>
+							<td colspan="3"><input type="text" name="inp1" id="inp1" placeholder="$00.00"> </td>	<!-- 1  -->
+						</tr>
+
+						<tr>
+							<td class="override">Small Cap Equity:</td>
+							<td colspan="3"><input type="text" name="inp2" id="inp2" placeholder="$00.00" ></td>			<!-- 2 -->
+						</tr>
+
+						<tr>
+							<td class="override">International Equity:</td>
+							<td colspan="3"><input type="text" name="inp3" id="inp3" placeholder="$00.00" ></td>		<!-- 3 -->
+						</tr>
+						<tr>
+							<td class="override">Fixed Income:</td>
+							<td colspan="3"><input type="text" name="inp4" id="inp4" placeholder="$00.00" ></td>		<!-- 4 -->
+						</tr>
+						<tr>
+							<td class="override">Cash Investments:</td>
+							<td colspan="3"><input type="text" name="inp5" id="inp5" placeholder="$00.00" ></td>		<!-- 5 -->
+						</tr>
+						<tr>
+							<td class="override">Other:</td>
+							<td colspan="3"><input type="text" name="inp6" id="inp6" placeholder="$00.00" ></td>		<!-- 6 -->
+						</tr>
+					</table>
+					<br>
+					<a href="portfolio.html" class="button big special">Enter</a>
+			</header>
+		</section>
+
+
+		<br><br><br><br><br><br>
+
+	</body>
+</html>

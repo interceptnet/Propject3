@@ -1,0 +1,38 @@
+CREATE TABLE Large_Cap_EQuity (
+    id			int not null auto_increment, --allows a unique number to be generated automatically when a new record is inserted into a table. 
+	cash       VARCHAR (15) NOT NULL,		--Often this is the primary key field that we would like to be created automatically 
+	Percentage  float,						--every time a new record is inserted.
+    password	VARCHAR (15) NOT NULL,
+    FOREIGN KEY (person_id) REFERENCES references (Large_Cap_EQuity)
+);
+
+CREATE TABLE Small_cap_Equity (
+     id			int not null auto_increment, --allows a unique number to be generated automatically when a new record is inserted into a table. 
+	cash       VARCHAR (15) NOT NULL,		--Often this is the primary key field that we would like to be created automatically 
+	Percentage  float,						--every time a new record is inserted.
+    password	VARCHAR (15) NOT NULL,
+    FOREIGN KEY (id) REFERENCES references (Large_Cap_EQuity)
+);
+CREATE TABLE Fixed_Income (
+    id			int not null auto_increment, --allows a unique number to be generated automatically when a new record is inserted into a table. 
+	cash       VARCHAR (15) NOT NULL,		--Often this is the primary key field that we would like to be created automatically 
+	Percentage  float,						--every time a new record is inserted.
+    password	VARCHAR (15) NOT NULL,
+    FOREIGN KEY (person_id) REFERENCES references (Large_Cap_EQuity)
+);
+
+CREATE TABLE Cash_Investments (
+    id			int not null auto_increment, --allows a unique number to be generated automatically when a new record is inserted into a table. 
+	cash       VARCHAR (15) NOT NULL,		--Often this is the primary key field that we would like to be created automatically 
+	Percentage  float,						--every time a new record is inserted.
+    password	VARCHAR (15) NOT NULL,
+    FOREIGN KEY (person_id) REFERENCES references (person_id)
+);
+
+
+CREATE TABLE Other (
+    id			int not null auto_increment, --allows a unique number to be generated automatically when a new record is inserted into a table. 
+	cash       VARCHAR (15) NOT NULL,		--Often this is the primary key field that we would like to be created automatically 
+	Percentage  float,						--every time a new record is inserted.
+    FOREIGN KEY (person_id) REFERENCES references (Large_Cap_EQuity)
+);

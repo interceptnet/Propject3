@@ -1,0 +1,85 @@
+<!-- Josh Carlson -->
+<!-- Web Tech team 5 -->
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Financial Control</title>
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/addTextbox.js"></script>
+		
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+
+
+
+	<body id="top">
+
+		
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h2>Control Your Finances</h2>
+					
+					</ul>
+				</div>
+			</section>
+
+		<br>
+
+	
+
+		<a name="formAnchor"></a>
+		<section id="main" class="wrapper style1">
+			<header class="major">
+				<h3>Manually Enter Your Data:</h3>
+				<form method="post" action="login.php" name="LoginForm">
+					<table>
+						<tr>
+							<td class="override">Login:</td>
+							<td colspan="3"><input type="text" name="username" id="username" placeholder="Username"> </td>	
+							<td colspan="3"><input type="text" name="password" id="password" placeholder="Password	"> </td>
+							<!-- <td colspan="3"><a href="dataInput.html" class="button big special">Enter</a> </td> -->
+							<td colspan="3"><input type="submit" class="button big special" value="Enter"></td>
+						</tr>
+					<!-- </table> -->
+				</form>
+						
+						<!-- <tr>
+							<td> </td>
+							<td> </td>
+							<td> </td>
+							<td> </td>
+							<td> </td>
+							<td> </td>
+							<td> </td>
+							<td> </td>
+							<td> </td>
+							<td> </td>
+						</tr> -->
+					
+				<form method="post" action="register.php" name="RegisterForm">
+					<!-- <table> -->
+						<tr>
+							<td class="override">Create Account:</td>
+							<td colspan="3"><input type="text" name="newusername" id="newusername" placeholder="Username"> </td>	
+							<td colspan="3"><input type="text" name="newpassword" id="newpassword" placeholder="Password"> </td>
+							<!-- <td colspan="3"><a href="dataInput.html" class="button big special">Enter</a> </td> -->
+							<td colspn="3"><input type="submit" class="button big special" value="Enter"></td>
+						</tr>
+					</table>
+				</form>
+				<br>	
+			</header>
+		</section>
+
+
+	</body>
+</html>

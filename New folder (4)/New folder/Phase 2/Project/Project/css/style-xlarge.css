@@ -1,0 +1,17 @@
+/* Josh Carlson */
+/* Web Tech team 5 */
+
+
+/* Basic */
+	body, input, select, textarea {
+		font-size: 12pt;
+	}
+
+/* Banner */
+	#banner {
+		padding: 9em 0;
+	}
+	
+/* table padding */
+	.\-3u { margin-left: 25% }
+	

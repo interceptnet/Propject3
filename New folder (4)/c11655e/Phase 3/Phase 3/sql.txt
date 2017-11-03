@@ -1,0 +1,34 @@
+drop table if exists Users;
+drop table if exists stock;
+drop table if exists bond;
+drop table if exists Cash;
+
+create table Users(
+User_Id int not null AUTO_INCREMENT,
+Name varchar(225),
+PRIMARY key (User_Id)
+);
+
+create table stock(
+User_Id int not null AUTO_INCREMENT,
+Dateadded date,
+Ticker char,
+Shares varchar(225),
+PRIMARY key (User_Id)
+);
+
+create table Bonds(    
+User_Id int not null AUTO_INCREMENT,
+dateadded varchar(225),
+Name char,
+amount dec(4.2),
+PRIMARY KEY (User_Id), 
+);
+
+
+create table Cash(
+User_Id int not null AUTO_INCREMENT,
+dateadded date,
+Amount dec(4.2),
+PRIMARY KEY (User_Id),   
+);
